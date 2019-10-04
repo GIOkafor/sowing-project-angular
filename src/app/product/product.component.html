@@ -1,0 +1,22 @@
+<div>
+    <div class="product_box d-flex flex-column align-items-center border rounded p-2">
+      <img [src]="product.main_image ? product.main_image : 'https://firebasestorage.googleapis.com/v0/b/form-check-app.appspot.com/o/image%20not%20found.png?alt=media&token=15008152-1af1-406a-8171-752f0a81b0ec'" alt="product image" class="product_image" height="60%" width="60%">
+    
+      <hr class="b-1">
+
+      <div class="product_info d-flex flex-column">
+        <span class="product_description_text">
+          {{product.description}}
+        </span>
+        <div class="product_price align-self-end mt-3 mb-3">
+          <span>Your Price</span>
+          <span class="price_text font-weight-bold">${{product.vendor_inventory[0].price}}</span>
+        </div>
+
+        <div class="user_cta d-flex justify-content-end">
+          <button class="btn mr-2" (click)="addToFavourites(product)"><i class="far fa-heart"></i></button>
+          <button class="btn btn-primary" (click)="addToCart(product)">Add To Cart</button>
+        </div>
+      </div>
+    </div>
+</div>

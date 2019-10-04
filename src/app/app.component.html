@@ -1,0 +1,54 @@
+<nav class="navbar logo_navbar">
+  <a href="#" class="navbar-brand">
+    <img src="https://firebasestorage.googleapis.com/v0/b/form-check-app.appspot.com/o/logo-2019.svg?alt=media&token=b26b10a4-1c39-400c-9538-f5b2e89f381b" alt="logo" width="200" height="40">
+  </a>
+</nav>
+
+<nav class="navbar navbar-expand search_navbar sticky-top">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav search_ul">
+      <form class="form-inline search_field">
+        <i class="fas fa-search"></i>
+        <input class="form-control search_input ml-sm-2" type="search" placeholder="Search by product name, manufacturer, SKU, keyword..." aria-label="Search">
+      </form>
+      <div class="nav-item nav-link dropdown categ">
+        <span class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          Categories
+        </span>
+
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item">Periodontists</a>
+          <a href="#" class="dropdown-item">General Dentistry</a>
+          <a href="#" class="dropdown-item">Endontonics</a>
+        </div>
+      </div>
+      <div class="nav-item nav-link fav">
+        <i class="fas fa-heart"></i> <span>Favourites</span>
+      </div>
+      <div class="nav-item nav-link cart">
+        <span class="cart_icon_count">0</span>
+        <i class="fas fa-shopping-cart"></i>
+        <span>Cart</span>
+      </div>
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row mt-4 ml-2 d-flex align-items-baseline filter_res_control">
+    <h4 class="pr-3">Promos</h4>
+
+    <a href="#" class="pl-3">SEE ALL</a>
+  </div>
+
+  <div class="row">
+    <!-- repeat col for each item -->
+    <product
+      class="col col-sm-12 col-md-3 mb-3"
+      *ngFor="let product of products" [product]="product"></product>
+  </div>
+</div>
