@@ -9,6 +9,7 @@ import { FavouritesService } from './favourites.service';
 })
 export class ProductComponent  {
   @Input() product: string;
+  favourite: boolean = false;
 
   constructor(
     private cartService: CartService,
@@ -29,6 +30,10 @@ export class ProductComponent  {
   }
 
   addToFavourites(product){
-    this.favouritesService.addToFavourites(product);
+    if(!this.favourite){
+      this.favouritesService.addToFavourites(product);
+      this.favourite = true;
+    }else
+      this.favourite = false;
   }
 }
