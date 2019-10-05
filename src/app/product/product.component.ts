@@ -19,6 +19,15 @@ export class ProductComponent  {
     this.cartService.addToCart(product);
   }
 
+  isInCart(product){
+    var index = this.cartService.isInCart(product);
+    
+    if(index)
+      return true;
+    else 
+      return false;
+  }
+
   addToFavourites(product){
     this.favouritesService.addToFavourites(product);
   }
