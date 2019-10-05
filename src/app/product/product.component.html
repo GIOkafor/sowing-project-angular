@@ -15,7 +15,8 @@
 
         <div class="user_cta d-flex justify-content-end">
           <button class="btn mr-2" (click)="addToFavourites(product)"><i class="far fa-heart"></i></button>
-          <button class="btn btn-primary" (click)="addToCart(product)">Add To Cart</button>
+          <button class="btn btn-primary" *ngIf="!isInCart(product)" (click)="addToCart(product)">Add To Cart</button>
+          <button type="button" *ngIf="isInCart(product)" class="btn btn-outline-danger" (click)="removeFromCart(product)">Remove</button>
         </div>
       </div>
     </div>
