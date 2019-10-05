@@ -29,8 +29,8 @@
       <div class="nav-item nav-link fav">
         <i class="fas fa-heart"></i> <span>Favourites</span>
       </div>
-      <div class="nav-item nav-link cart">
-        <span class="cart_icon_count">0</span>
+      <div class="nav-item nav-link cart" (click)="openCart()">
+        <span class="cart_icon_count">{{cart.length}}</span>
         <i class="fas fa-shopping-cart"></i>
         <span>Cart</span>
       </div>
